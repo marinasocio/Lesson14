@@ -37,8 +37,21 @@ const getCard = async () => {
 			let author = document.createElement('a');
 			author.className = 'card-link-author';
       author.innerHTML = 'About author';
-      author.setAttribute("href", '#');
+      author.setAttribute("href", '#collapseExample');
+      author.setAttribute("data-toggle", "collapse");
+      author.setAttribute("aria-expanded", "false");
+      author.setAttribute("aria-controls", "collapseExample");
       d.appendChild(author);
+
+      let authorData = document.createElement('div');
+      authorData.className = 'collapse';
+      // let authorText = `${getAuthors.name}`;
+      // console.log(getAuthors.name);
+      let authorText = "Leanne Graham";
+      authorData.setAttribute("id", "collapseExample");
+      authorData.innerHTML = authorText;
+      author.appendChild(authorData);
+
       
       let comments = document.createElement('a');
 			comments.className = 'card-link-comments ml-2';
